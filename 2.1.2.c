@@ -4,12 +4,15 @@ int main()
 {
 	setlocale(LC_ALL, "Rus");
 	int year = 0;
-	float summa = 0, procent = 0;
+	float summa = 0, timer = 0, procent = 0;
+	printf("Введите сумму, которую положили в банк:\n");
 	scanf_s("%f", &summa);
-	procent = summa;
-	if(summa > 0)
+	timer = summa;
+	printf("Введите капитализированный годовой процент:\n");
+	scanf_s("%f", &procent);
+	if(summa > 0 && procent > 0)
 	{
-		for (; procent <= summa * 2; procent *= 1.03)
+		for (; timer <= summa * 2; timer *= 1.00 + (procent * 0.01))
 		{
 			++year;
 		}
@@ -17,7 +20,7 @@ int main()
 	}
 	else
 	{
-		printf("Неправильно введён тип данных.");
+		printf("Неверный тип данных.");
 	}
 	return 0;
 }
