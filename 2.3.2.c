@@ -7,7 +7,7 @@ int main()
 	float A = 0, B = 0;
 	printf("Введите больший отрезок A:\n");
 	scanf_s("%f", &A);
-	printf("Введите больший отрезок B:\n");
+	printf("Введите меньший отрезок B:\n");
 	scanf_s("%f", &B);
 	if (A > B)
 	{
