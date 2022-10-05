@@ -86,6 +86,6 @@ int main()
 				}
 			}
 		}
-		printf("Результат: %d", temp);
+		printf("Результат: %d\n", temp);
 	}
 }
