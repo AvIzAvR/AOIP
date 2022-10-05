@@ -86,6 +86,13 @@ int main()
 				}
 			}
 		}
-		printf("Результат: %d\n", temp);
+		if(temp != -1)
+		{
+			printf("Результат: %d\n", temp);
+		}
+		else if (temp = -1)
+		{
+			printf("Все числа совпадают!\n");
+		}
 	}
 }
