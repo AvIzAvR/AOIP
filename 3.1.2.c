@@ -1,15 +1,17 @@
-#include<stdio.h>
+##include<stdio.h>
 #include<stdlib.h>
 #include<locale.h>
 int main()
 {
 	setlocale(LC_ALL, "RUS");
-	while(1)
+	while (1)
 	{
-		printf("Введите размерность массива:\nДля случайной генерации размерности введите \"r\"\n");
+		printf("Р’РІРµРґРёС‚Рµ СЂР°Р·РјРµСЂРЅРѕСЃС‚СЊ РґР»СЏ РґРІСѓС… РјР°СЃСЃРёРІРѕРІ:\nР”Р»СЏ СЃР»СѓС‡Р°Р№РЅРѕР№ РіРµРЅРµСЂР°С†РёРё СЂР°Р·РјРµСЂРЅРѕСЃС‚Рё РІРІРµРґРёС‚Рµ \"r\"\n");
 		int mass[100];
-		int raz, nul1, nul2, pred, true, rands;
-		int brain = 1;
+		int mass2[100];
+		int true, raz = 10;
+		int temp = -1;
+		int torf = 0;
 		scanf_s("%d", &raz);
 		if (raz > 0)
 		{
@@ -17,7 +19,7 @@ int main()
 		}
 		else if (raz = 'r')
 		{
-			printf("Введите максимальное случайное число:");
+			printf("Р’РІРµРґРёС‚Рµ РјР°РєСЃРёРјР°Р»СЊРЅРѕРµ СЃР»СѓС‡Р°Р№РЅРѕРµ С‡РёСЃР»Рѕ:");
 			int random;
 			rewind(stdin);
 			scanf_s("%d", &random);
@@ -27,97 +29,63 @@ int main()
 			}
 			else
 			{
-				printf("Неверно введённый тип данных.");
+				printf("РќРµРІРµСЂРЅРѕ РІРІРµРґС‘РЅРЅС‹Р№ С‚РёРї РґР°РЅРЅС‹С….");
 				exit(0);
 			}
 		}
 		else
 		{
-			printf("Неверно введённый тип данных.");
+			printf("РќРµРІРµСЂРЅРѕ РІРІРµРґС‘РЅРЅС‹Р№ С‚РёРї РґР°РЅРЅС‹С….");
 			exit(0);
 		}
-
-		printf("Если хотите продолжить ввод чисел с клавиатуры введите \"1\"\nЕсли хотите сгенерировать %d случайных чисел введите \"2\"\n", raz);
-		scanf_s("%d", &rands);
-		if (rands == 1)
+		for (int i = 0; i <= raz; i++)
 		{
-			for (int i = 0; i <= raz; i++)
+			printf("Р’РІРµРґРёС‚Рµ %d-Рµ С‡РёСЃР»Рѕ 1-РѕРіРѕ РјР°СЃСЃРёРІР°\n", i);
+			scanf_s("%d", &true);
+			if (true >= 0 || true < 0)
 			{
-				printf("Введите %d-е число массива\n", i);
-				scanf_s("%d", &true);
-				if (true >= 0 || true < 0)
-				{
-					mass[i] = true;
-				}
-				else
-				{
-					printf("Неверно введённый тип данных.");
-					exit(0);
-				}
-			}
-		}
-		else if (rands == 2)
-		{
-			printf("Введите максимальный предел для всех чисел:\n");
-			scanf_s("%d", &pred);
-			if (pred > 0)
-			{
-				for (int i = 0; i <= raz; i++)
-				{
-					mass[i] = rand() % pred;
-					printf("%d; ", mass[i]);
-				}
+				mass[i] = true;
 			}
 			else
 			{
-				printf("Неверно введённый тип данных.");
+				printf("РќРµРІРµСЂРЅРѕ РІРІРµРґС‘РЅРЅС‹Р№ С‚РёРї РґР°РЅРЅС‹С….");
 				exit(0);
 			}
 		}
-		else
-		{
-			printf("Неверно введённый тип данных.");
-			exit(0);
-		}
-		for (int i = 1; i <= raz; i++)
-		{
-			if (i % 2 == 0)
-			{
-				brain *= mass[i];
-			}
-		}
-		printf("\nПроизведение элементов массива с четными номерами: %d\n", brain);
-		int nul = 0;
 		for (int i = 0; i <= raz; i++)
 		{
-			if (mass[i] == 0)
+			printf("Р’РІРµРґРёС‚Рµ %d-Рµ С‡РёСЃР»Рѕ 2-РѕРіРѕ РјР°СЃСЃРёРІР°\n", i);
+			scanf_s("%d", &true);
+			if (true >= 0 || true < 0)
 			{
-				nul++;
+				mass2[i] = true;
+			}
+			else
+			{
+				printf("РќРµРІРµСЂРЅРѕ РІРІРµРґС‘РЅРЅС‹Р№ С‚РёРї РґР°РЅРЅС‹С….");
+				exit(0);
 			}
 		}
-		if (nul > 1)
+
+
+		for (int i = 0; i < raz; ++i)
 		{
-			for (int i = 0; i <= raz; i++)
+			torf = 0;
+			for (int j = 0; j < raz; ++j)
 			{
-				if (mass[i] == 0)
+				if (mass[i] == mass2[j])
 				{
-					nul1 = mass[i + 1];
-					for (int ii = raz; ii > 0; ii--)
-					{
-						if (mass[ii] == 0)
-						{
-							nul2 = mass[ii - 1];
-							printf("Сумму элементов массива, расположенных между первым и последним нулевыми элементами: %d\n", (nul1 + nul2));
-							break;
-						}
-					}
-					break;
+					torf = 1;
+				}
+			}
+			if (torf == 0)
+			{
+				if (temp == -1 || temp > mass[i])
+				{
+					temp = mass[i];
 				}
 			}
 		}
-		else
-		{
-			printf("Двух и более нулей в массиве не обнаружено\n");
-		}
+		printf("Р РµР·СѓР»СЊС‚Р°С‚: %d", temp);
 	}
 }
