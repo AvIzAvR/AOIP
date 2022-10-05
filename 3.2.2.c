@@ -68,7 +68,10 @@ int main()
 					}
 				}
 			}
-			mass[raz] = 0;
+						if (mass[raz] % 2 == 0)
+			{
+				mass[raz] = 0;
+			}
 			for (int i = 0; i <= raz; i++)
 			{
 				printf("%d; ", mass[i]);
