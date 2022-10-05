@@ -4,8 +4,6 @@
 int main()
 {
 	setlocale(LC_ALL, "RUS");
-	for (int retry = 0; retry < 1000000; retry++)
-	{
 		printf("Введите размерность массива:\nДля случайной генерации размерности введите \"r\"\n");
 		int mass[100];
 		int raz, nul1, nul2, pred, true, rands;
@@ -119,5 +117,4 @@ int main()
 		{
 			printf("Двух и более нулей в массиве не обнаружено\n");
 		}
-	}
 }
