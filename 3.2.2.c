@@ -45,7 +45,7 @@ int main()
 			if (random > 0)
 			{
 				raz = rand() % random;
-			mass[raz];
+				mass[raz];
 			}
 		}
 
@@ -72,7 +72,7 @@ int main()
 					while (true < 0)
 					{
 						printf("Неверно введённый тип данных.\n");
-						printf("Введите %d-е положительное число(включая ноль) массива\n", i);
+						printf("Введите %d-е число массива\n", i);
 						rewind(stdin);
 						scanf_s("%d", &true);
 					}
@@ -99,11 +99,13 @@ int main()
 			}
 			if (pred > 0)
 			{
+				printf("Ваш массив:");
 				for (int i = 0; i <= raz; i++)
 				{
 					mass[i] = rand() % pred;
 					printf("%d; ", mass[i]);
 				}
+				printf("\n");
 			}
 		}
 		for (int i = 1; i <= raz; i++)
@@ -132,13 +134,14 @@ int main()
 			{
 				mass[raz] = 0;
 			}
+			printf("\nРезультат:");
 			for (int i = 0; i <= raz; i++)
 			{
 				printf("%d; ", mass[i]);
 			}
-			printf("\n");
 		}
 		else
+			printf("\nРезультат:");
 			for (int i = 0; i <= raz; i++)
 			{
 				printf("%d; ", mass[i]);
