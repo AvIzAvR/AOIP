@@ -44,6 +44,7 @@ int main()
 			if (random > 0)
 			{
 				raz = rand() % random;
+				mass[raz];
 			}
 		}
 
