@@ -21,6 +21,8 @@ int main()
 				printf("Введите размерность массива:\nДля случайной генерации размерности введите \"0\"\n");
 				scanf_s("%d", &raz);
 			}
+			mass[raz];
+			mass2[raz];
 		}
 		else if (raz > 0)
 		{
@@ -41,10 +43,14 @@ int main()
 					rewind(stdin);
 					scanf_s("%d", &random);
 				}
+			mass[raz];
+			mass2[raz];
 			}
 			if (random > 0)
 			{
 				raz = rand() % random;
+			mass[raz];
+			mass2[raz];
 			}
 		}
 
@@ -71,7 +77,7 @@ int main()
 					while (true < 0)
 					{
 						printf("Неверно введённый тип данных.\n");
-						printf("Введите %d-е число массива\n", i);
+						printf("Введите %d-е положительное число(включая ноль) массива\n", i);
 						rewind(stdin);
 						scanf_s("%d", &true);
 					}
