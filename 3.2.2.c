@@ -21,8 +21,6 @@ int main()
 				printf("Введите размерность массива:\nДля случайной генерации размерности введите \"0\"\n");
 				scanf_s("%d", &raz);
 			}
-			mass[raz];
-			mass2[raz];
 		}
 		else if (raz > 0)
 		{
@@ -43,14 +41,11 @@ int main()
 					rewind(stdin);
 					scanf_s("%d", &random);
 				}
-			mass[raz];
-			mass2[raz];
 			}
 			if (random > 0)
 			{
 				raz = rand() % random;
 			mass[raz];
-			mass2[raz];
 			}
 		}
 
