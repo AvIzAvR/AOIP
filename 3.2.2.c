@@ -5,7 +5,7 @@ int main()
 {
 	setlocale(LC_ALL, "RUS");
 	int mass[100];
-	int raz, nul1, nul2, pred, true, rands;
+	int raz, nul1, nul2, pred, trues, rands;
 	int brain = 1;
 	int choice;
 	while (1)
@@ -66,20 +66,20 @@ int main()
 			for (int i = 0; i <= raz; i++)
 			{
 				printf("Введите %d-е положительное число(включая ноль) массива\n", i);
-				scanf_s("%d", &true);
-				if (true < 0)
+				scanf_s("%d", &trues);
+				if (trues < 0)
 				{
-					while (true < 0)
+					while (trues < 0)
 					{
 						printf("Неверно введённый тип данных.\n");
 						printf("Введите %d-е число массива\n", i);
 						rewind(stdin);
-						scanf_s("%d", &true);
+						scanf_s("%d", &trues);
 					}
 				}
-				if (true >= 0)
+				if (trues >= 0)
 				{
-					mass[i] = true;
+					mass[i] = trues;
 				}
 			}
 		}
@@ -142,10 +142,10 @@ int main()
 		}
 		else
 			printf("\nРезультат:");
-			for (int i = 0; i <= raz; i++)
-			{
-				printf("%d; ", mass[i]);
-			}
+		for (int i = 0; i <= raz; i++)
+		{
+			printf("%d; ", mass[i]);
+		}
 		printf("\n");
 	}
 }
