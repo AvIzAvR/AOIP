@@ -4,7 +4,7 @@
 int main()
 {
 	int mass[100];
-	int raz, nul1, nul2, pred, true, rands;
+	int raz, nul1, nul2, pred, trues, rands;
 	int brain = 1;
 	int choice;
 	int mass2[100];
@@ -73,39 +73,39 @@ int main()
 			for (int i = 0; i <= raz; i++)
 			{
 				printf("Введите %d-е положительное число(включая ноль) для 1ого массива\n", i);
-				scanf_s("%d", &true);
-				if (true < 0)
+				scanf_s("%d", &trues);
+				if (trues < 0)
 				{
-					while (true < 0)
+					while (trues < 0)
 					{
 						rewind(stdin);
 						printf("Неверно введённый тип данных.\n");
 						printf("Введите %d-е положительное число(включая ноль) для 1ого массива\n", i);
-						scanf_s("%d", &true);
+						scanf_s("%d", &trues);
 					}
 				}
-				if (true >= 0)
+				if (trues >= 0)
 				{
-					mass[i] = true;
+					mass[i] = trues;
 				}
 			}
 			for (int i = 0; i <= raz; i++)
 			{
 				printf("Введите %d-е положительное число(включая ноль) для 2ого массива\n", i);
-				scanf_s("%d", &true);
-				if (true < 0)
+				scanf_s("%d", &trues);
+				if (trues < 0)
 				{
-					while (true < 0)
+					while (trues < 0)
 					{
 						printf("Неверно введённый тип данных.\n");
 						printf("Введите %d-е положительное число(включая ноль) для 2ого массива\n", i);
 						rewind(stdin);
-						scanf_s("%d", &true);
+						scanf_s("%d", &trues);
 					}
 				}
-				if (true >= 0)
+				if (trues >= 0)
 				{
-					mass2[i] = true;
+					mass2[i] = trues;
 				}
 			}
 		}
@@ -154,31 +154,31 @@ int main()
 				}
 			}
 		}
-			for (int i = 0; i < raz; ++i)
+		for (int i = 0; i < raz; ++i)
+		{
+			torf = 0;
+			for (int j = 0; j < raz; ++j)
 			{
-				torf = 0;
-				for (int j = 0; j < raz; ++j)
+				if (mass[i] == mass2[j])
 				{
-					if (mass[i] == mass2[j])
-					{
-						torf = 1;
-					}
-				}
-				if (torf == 0)
-				{
-					if (temp == -1 || temp > mass[i])
-					{
-						temp = mass[i];
-					}
+					torf = 1;
 				}
 			}
-			if (temp != -1)
+			if (torf == 0)
 			{
-				printf("\nРезультат: %d\n", temp);
+				if (temp == -1 || temp > mass[i])
+				{
+					temp = mass[i];
+				}
 			}
-			else if (temp = -1)
-			{
-				printf("Все числа совпадают!\n");
-			}
+		}
+		if (temp != -1)
+		{
+			printf("\nРезультат: %d\n", temp);
+		}
+		else if (temp = -1)
+		{
+			printf("Все числа совпадают!\n");
+		}
 	}
 }
