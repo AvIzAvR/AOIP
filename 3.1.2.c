@@ -64,11 +64,11 @@ int main()
 		{
 			for (int i = 0; i <= raz; i++)
 			{
-				printf("Введите %d-е положительное число(включая ноль) массива\n", i);
+				printf("Введите %d-е число массива\n", i);
 				scanf_s("%d", &true);
-				if(true < 0)
+				if(true == -858993460)
 				{
-					while (true < 0)
+					while (true == -858993460)
 					{
 						printf("Неверно введённый тип данных.\n");
 						printf("Введите %d-е число массива\n", i);
@@ -76,7 +76,7 @@ int main()
 						scanf_s("%d", &true);
 					}
 				}
-				if (true >= 0)
+				else
 				{
 					mass[i] = true;
 				}
