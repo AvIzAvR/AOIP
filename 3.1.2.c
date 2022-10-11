@@ -5,13 +5,14 @@ int main()
 {
 	setlocale(LC_ALL, "RUS");
 	int mass[100];
-	int raz, nul1, nul2, pred, true, rands;
+	int raz, nul1, pred, true, rands;
 	int brain = 1;
 	while(1)
 	{
+
 		printf("Введите размерность массива:\nДля случайной генерации размерности введите \"0\"\n");
 		scanf_s("%d", &raz);
-		if(raz < 0 && raz != 0)
+		if (raz < 0 && raz != 0)
 		{
 			while (raz < 0 && raz != 0)
 			{
@@ -31,26 +32,25 @@ int main()
 			int random;
 			rewind(stdin);
 			scanf_s("%d", &random);
-		if(random<0 && random !=0)
-		{
-			while (random < 0 && random != 0)
+			if (random < 0 && random != 0)
 			{
-				printf("Неверно введённый тип данных.\n");
-				printf("Введите максимальное случайное число:");
-				rewind(stdin);
-				scanf_s("%d", &random);
+				while (random < 0 && random != 0)
+				{
+					printf("Неверно введённый тип данных.\n");
+					printf("Введите максимальное случайное число:");
+					rewind(stdin);
+					scanf_s("%d", &random);
+				}
 			}
-		}
 			if (random > 0)
 			{
 				raz = rand() % random;
 				mass[raz];
 			}
 		}
-
 		printf("Если хотите продолжить ввод чисел с клавиатуры введите \"1\"\nЕсли хотите сгенерировать %d случайных чисел введите \"2\"\n", raz);
 		scanf_s("%d", &rands);
-		if(rands != 1 && rands != 2)
+		if (rands != 1 && rands != 2)
 		{
 			while (rands != 1 && rands != 2)
 			{
@@ -65,30 +65,22 @@ int main()
 			for (int i = 0; i <= raz; i++)
 			{
 				printf("Введите %d-е число массива\n", i);
-				scanf_s("%d", &true);
-				if(true == -858993460)
+				while (!scanf_s("%d", &true))
 				{
-					while (true == -858993460)
-					{
-						printf("Неверно введённый тип данных.\n");
-						printf("Введите %d-е число массива\n", i);
-						rewind(stdin);
-						scanf_s("%d", &true);
-					}
+					printf_s("Неверно введённый тип данных.");
+					printf("Введите %d-е число массива\n", i);
+					rewind(stdin);
 				}
-				else
-				{
-					mass[i] = true;
-				}
+				mass[i] = true;
 			}
 		}
 		else if (rands == 2)
 		{
 			printf("Введите максимальный предел для всех чисел:\n");
 			scanf_s("%d", &pred);
-			if(pred < 0)
+			if (pred < 0)
 			{
-				while(pred < 0)
+				while (pred < 0)
 				{
 					printf("Неверно введённый тип данных.\n");
 					printf("Введите максимальный предел для всех чисел:\n");
@@ -123,23 +115,28 @@ int main()
 		}
 		if (nul > 1)
 		{
-			for (int i = 0; i <= raz; i++)
+			int open = 0, close = 0, nul2 = 0;
+			for (int i = 0; i < raz; i++)
 			{
 				if (mass[i] == 0)
 				{
-					nul1 = mass[i + 1];
-					for (int ii = raz; ii > 0; ii--)
-					{
-						if (mass[ii] == 0)
-						{
-							nul2 = mass[ii - 1];
-							printf("Сумму элементов массива, расположенных между первым и последним нулевыми элементами: %d\n", (nul1 + nul2));
-							break;
-						}
-					}
+					open = i;
 					break;
 				}
 			}
+			for (int i = raz--; i >= 0; i--)
+			{
+				if (mass[i] == 0)
+				{
+					close = i;
+					break;
+				}
+			}
+			for(int i = open; i <= close; i++)
+			{
+				nul2 += mass[i];
+			}
+			printf("Сумма между первым и последним нулевыми элементами массива: %d\n", nul2);
 		}
 		else
 		{
