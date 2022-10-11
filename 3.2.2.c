@@ -3,13 +3,9 @@
 #include<locale.h>
 int main()
 {
-	setlocale(LC_ALL, "RUS");
-	int mass[100];
-	int raz, nul1, nul2, pred, trues, rands;
-	int brain = 1;
-	int choice;
-	while (1)
+	while(1)
 	{
+
 		printf("Введите размерность массива:\nДля случайной генерации размерности введите \"0\"\n");
 		scanf_s("%d", &raz);
 		if (raz < 0 && raz != 0)
@@ -48,7 +44,6 @@ int main()
 				mass[raz];
 			}
 		}
-
 		printf("Если хотите продолжить ввод чисел с клавиатуры введите \"1\"\nЕсли хотите сгенерировать %d случайных чисел введите \"2\"\n", raz);
 		scanf_s("%d", &rands);
 		if (rands != 1 && rands != 2)
@@ -65,22 +60,14 @@ int main()
 		{
 			for (int i = 0; i <= raz; i++)
 			{
-				printf("Введите %d-е положительное число(включая ноль) массива\n", i);
-				scanf_s("%d", &trues);
-				if (trues < 0)
+				printf("Введите %d-е число массива\n", i);
+				while (!scanf_s("%d", &true))
 				{
-					while (trues < 0)
-					{
-						printf("Неверно введённый тип данных.\n");
-						printf("Введите %d-е число массива\n", i);
-						rewind(stdin);
-						scanf_s("%d", &trues);
-					}
+					printf_s("Неверно введённый тип данных.");
+					printf("Введите %d-е число массива\n", i);
+					rewind(stdin);
 				}
-				if (trues >= 0)
-				{
-					mass[i] = trues;
-				}
+				mass[i] = true;
 			}
 		}
 		else if (rands == 2)
@@ -99,13 +86,11 @@ int main()
 			}
 			if (pred > 0)
 			{
-				printf("Ваш массив:");
 				for (int i = 0; i <= raz; i++)
 				{
 					mass[i] = rand() % pred;
 					printf("%d; ", mass[i]);
 				}
-				printf("\n");
 			}
 		}
 		for (int i = 1; i <= raz; i++)
