@@ -3,14 +3,15 @@
 #include<locale.h>
 int main()
 {
+	setlocale(LC_ALL, "RUS");
 	int mass[100];
-	int raz, nul1, nul2, pred, trues, rands;
+	int raz, nul1, nul2, pred, true, rands;
 	int brain = 1;
 	int choice;
 	int mass2[100];
-	int temp = -1;
+	int temp = 'a';
 	int torf = 0;
-	setlocale(LC_ALL, "RUS");
+	while (1)
 	{
 		printf("Введите размерность для двух массивов:\nДля случайной генерации размерности введите \"0\"\n");
 		scanf_s("%d", &raz);
@@ -72,41 +73,25 @@ int main()
 		{
 			for (int i = 0; i <= raz; i++)
 			{
-				printf("Введите %d-е положительное число(включая ноль) для 1ого массива\n", i);
-				scanf_s("%d", &trues);
-				if (trues < 0)
+				printf("Введите %d-е число 1-ого массива\n", i);
+				while (!scanf_s("%d", &true))
 				{
-					while (trues < 0)
-					{
-						rewind(stdin);
-						printf("Неверно введённый тип данных.\n");
-						printf("Введите %d-е положительное число(включая ноль) для 1ого массива\n", i);
-						scanf_s("%d", &trues);
-					}
+					printf_s("Неверно введённый тип данных.\n");
+					printf("Введите %d-е число 1-ого массива\n", i);
+					rewind(stdin);
 				}
-				if (trues >= 0)
-				{
-					mass[i] = trues;
-				}
+				mass[i] = true;
 			}
 			for (int i = 0; i <= raz; i++)
 			{
-				printf("Введите %d-е положительное число(включая ноль) для 2ого массива\n", i);
-				scanf_s("%d", &trues);
-				if (trues < 0)
+				printf("Введите %d-е число 2-ого массива\n", i);
+				while (!scanf_s("%d", &true))
 				{
-					while (trues < 0)
-					{
-						printf("Неверно введённый тип данных.\n");
-						printf("Введите %d-е положительное число(включая ноль) для 2ого массива\n", i);
-						rewind(stdin);
-						scanf_s("%d", &trues);
-					}
+					printf_s("Неверно введённый тип данных.\n");
+					printf("Введите %d-е число 2-ого массива\n", i);
+					rewind(stdin);
 				}
-				if (trues >= 0)
-				{
-					mass2[i] = trues;
-				}
+				mass2[i] = true;
 			}
 		}
 		else if (rands == 2)
@@ -154,31 +139,31 @@ int main()
 				}
 			}
 		}
-		for (int i = 0; i < raz; ++i)
-		{
-			torf = 0;
-			for (int j = 0; j < raz; ++j)
+			for (int i = 0; i < raz; ++i)
 			{
-				if (mass[i] == mass2[j])
+				torf = 0;
+				for (int j = 0; j < raz; ++j)
 				{
-					torf = 1;
+					if (mass[i] == mass2[j])
+					{
+						torf = 1;
+					}
+				}
+				if (torf == 0)
+				{
+					if (temp == 'a' || temp > mass[i])
+					{
+						temp = mass[i];
+					}
 				}
 			}
-			if (torf == 0)
+			if (temp != 'a')
 			{
-				if (temp == -1 || temp > mass[i])
-				{
-					temp = mass[i];
-				}
+				printf("\nРезультат: %d\n", temp);
 			}
-		}
-		if (temp != -1)
-		{
-			printf("\nРезультат: %d\n", temp);
-		}
-		else if (temp = -1)
-		{
-			printf("Все числа совпадают!\n");
-		}
+			else if (temp = 'a')
+			{
+				printf("Все числа совпадают!\n");
+			}
 	}
 }
