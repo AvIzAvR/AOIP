@@ -3,9 +3,12 @@
 #include<locale.h>
 int main()
 {
-	while(1)
+	int mass[100];
+	int raz, nul1, pred, true, rands;
+	int brain = 1;
+	while (1)
 	{
-
+		setlocale(LC_ALL, "Rus");
 		printf("Введите размерность массива:\nДля случайной генерации размерности введите \"0\"\n");
 		scanf_s("%d", &raz);
 		if (raz < 0 && raz != 0)
@@ -63,7 +66,7 @@ int main()
 				printf("Введите %d-е число массива\n", i);
 				while (!scanf_s("%d", &true))
 				{
-					printf_s("Неверно введённый тип данных.");
+					printf_s("Неверно введённый тип данных.\n");
 					printf("Введите %d-е число массива\n", i);
 					rewind(stdin);
 				}
@@ -126,10 +129,12 @@ int main()
 			}
 		}
 		else
-			printf("\nРезультат:");
-		for (int i = 0; i <= raz; i++)
 		{
-			printf("%d; ", mass[i]);
+			printf("\nРезультат:");
+			for (int i = 0; i <= raz; i++)
+			{
+				printf("%d; ", mass[i]);
+			}
 		}
 		printf("\n");
 	}
