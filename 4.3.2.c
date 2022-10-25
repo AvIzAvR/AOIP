@@ -136,5 +136,5 @@ int main()
 			sum += mass[row / 2][x];
 		}
 	}
-	printf("Сумма треугольника: %d", sum);
+	printf("\nСумма треугольника: %d", sum);
 }
