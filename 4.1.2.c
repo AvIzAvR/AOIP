@@ -4,6 +4,7 @@
 #include<time.h>
 
 int mass[100][100];
+int proverka = 0;
 int x, y;
 int CheckRowMax(int row, int col) {
 	int got = mass[col][row];
@@ -146,15 +147,15 @@ int main()
 	}
 	if (rands == 1)
 	{
+		proverka = 2;
 		for (int i = 0; i <= row; i++)
 		{
 			for (int k = 0; k <= col; k++)
 			{
-				printf("Введите элемент %d столбца, %d строки\n", i, k);
+				printf("Введите элемент %d cтроки, %d столбца\n", i, k);
 				while (!scanf_s("%d", &true))
 				{
 					printf("Неверно введённый тип данных.\n");
-					printf("Введите %d-е число массива\n", i);
 					rewind(stdin);
 				}
 				mass[i][k] = true;
@@ -190,9 +191,8 @@ int main()
 	}
 	x = row;
 	y = col;
-	int proverka = 0;
-	int number = 0; 
-	while(proverka == 0)
+	int number = 0;
+	while (proverka == 0)
 	{
 		number++;
 		printf("Попытка №%d \n", number);
@@ -230,5 +230,34 @@ int main()
 			}
 		}
 	}
+	if (proverka == 2)
+	{
+		printf("Ваш массив:");
+		for (int i = 0; i <= row; i++)
+		{
+			printf("\n");
+			for (int k = 0; k <= col; k++)
+			{
+				printf("%d; ", mass[i][k]);
+			}
+		}
+		printf("\n");
+		for (int i = 0; i <= row; i++) {
+			for (int j = 0; j <= col; j++) {
+				if ((CheckcolMax(j, i) && CheckRowMin(j, i)))
+				{
+					printf("(%d,%d) = %d (Collumn max, row min)\n", j, i, mass[i][j]);
+					proverka = 1;
+				}
+
+				else if (CheckcolMin(j, i) && CheckRowMax(j, i))
+				{
+					printf("(%d,%d) = %d (Row max, Collumn min)\n", j, i, mass[i][j]);
+					proverka = 1;
+				}
+			}
+		}
+	}
+	system("pause");
 }
 
