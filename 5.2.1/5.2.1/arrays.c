@@ -9,7 +9,7 @@ void raz(int* x)
 	while (!scanf_s("%d", x) || getchar() != '\n' || *x < 0)
 	{
 		rewind(stdin);
-		printf("Неверный тип данных\n");
+		printf("РќРµРІРµСЂРЅС‹Р№ С‚РёРї РґР°РЅРЅС‹С…\n");
 	}
 }
 
@@ -18,7 +18,7 @@ void element(int* x)
 	while (!scanf_s("%d", x) || getchar() != '\n')
 	{
 		rewind(stdin);
-		printf("Неверный тип данных\n");
+		printf("РќРµРІРµСЂРЅС‹Р№ С‚РёРї РґР°РЅРЅС‹С…\n");
 	}
 }
 
