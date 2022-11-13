@@ -10,7 +10,7 @@ void raz(int* x)
 	while (!scanf_s("%d", x) || getchar() != '\n' || *x <= 0)
 	{
 		rewind(stdin);
-		printf("Íåâåðíûé òèï äàííûõ\n");
+		printf("ÐÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ñ‚Ð¸Ð¿ Ð´Ð°Ð½Ð½Ñ‹Ñ…\n");
 	}
 }
 
@@ -75,9 +75,9 @@ int* write_num(int number, int* razmer)
 	int i = 0;
 	while (1) {
 		int entered;
-		printf_s("Ââåäèòå ýëåìåíò ìàññèâà\n");
+		printf_s("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ Ð¼Ð°ÑÑÐ¸Ð²Ð°\n");
 		while (!scanf_s("%d", &entered) || getchar() != '\n') {
-			printf_s("Íåâåðíûé òèï äàííûõ\n");
+			printf_s("ÐÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ñ‚Ð¸Ð¿ Ð´Ð°Ð½Ð½Ñ‹Ñ…\n");
 			rewind(stdin);
 		}
 		temp[i] = entered;
@@ -176,7 +176,7 @@ int random()
 	int x;
 	while (!scanf_s("%d", &x) || x != 0 && x != 1)
 	{
-		printf("Íåâåðíûé òèï äàííûõ\n");
+		printf("ÐÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ñ‚Ð¸Ð¿ Ð´Ð°Ð½Ð½Ñ‹Ñ…\n");
 		rewind(stdin);
 	}
 	return x;
@@ -194,7 +194,7 @@ void rand_elem(int* arr, int razmer)
 void rand_gen_raz(razmer)
 {
 	razmer = rand() % (200 + 100);
-	printf("Ðàçìåðíîñòü âàøåãî ìàññèâà: %d\n", razmer);
+	printf("Ð Ð°Ð·Ð¼ÐµÑ€Ð½Ð¾ÑÑ‚ÑŒ Ð²Ð°ÑˆÐµÐ³Ð¾ Ð¼Ð°ÑÑÐ¸Ð²Ð°: %d\n", razmer);
 }
 
 int** search_low(int** arr, int razmer, int low, int num)
@@ -217,7 +217,7 @@ void write_side(int* pos)
 		while (!scanf_s("%d", pos) || *pos != 1 && *pos != 2 && *pos != 3 && *pos != 4)
 	{
 		rewind(stdin);
-		printf("Íåâåðíî ââåä¸ííûé òèï äàííûõ!");
+		printf("ÐÐµÐ²ÐµÑ€Ð½Ð¾ Ð²Ð²ÐµÐ´Ñ‘Ð½Ð½Ñ‹Ð¹ Ñ‚Ð¸Ð¿ Ð´Ð°Ð½Ð½Ñ‹Ñ…!");
 	}
 }
 
@@ -225,11 +225,11 @@ void elem_write(int element, int razmer, int* arr)
 {
 	for (int i = 0; i < razmer; i++)
 	{
-		printf("Ââåäèòå %d-ûé ýëåìåíò ìàññèâà\n", i);
+		printf("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ %d-Ñ‹Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ Ð¼Ð°ÑÑÐ¸Ð²Ð°\n", i);
 		while (!scanf_s("%d", &arr[i]) || getchar() != '\n')
 		{
 			rewind(stdin);
-			printf("Íåâåðíûé òèï äàííûõ\n");
+			printf("ÐÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ñ‚Ð¸Ð¿ Ð´Ð°Ð½Ð½Ñ‹Ñ…\n");
 		}
 	}
 }
