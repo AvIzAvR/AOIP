@@ -16,10 +16,11 @@ int main()
 		srand(time(NULL));
 		int T;
 		setlocale(LC_ALL, "");
-		printf("Введите номер задания:\n");
-		while (!scanf_s("%d", &T) && T != 1)
+		printf("Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ Р·Р°РґР°РЅРёСЏ:\n");
+		while (!scanf_s("%d", &T))
 		{
-			printf("Неверный тип данных");
+			printf("РќРµРІРµСЂРЅС‹Р№ С‚РёРї РґР°РЅРЅС‹С…\n");
+			rewind(stdin);
 		}
 		switch (T)
 		{
@@ -50,10 +51,10 @@ void T1()
 	int* array = NULL;
 	setlocale(LC_ALL, "");
 	int razmer = 0;
-	printf("Введите размерность массива:\n");
+	printf("Р’РІРµРґРёС‚Рµ СЂР°Р·РјРµСЂРЅРѕСЃС‚СЊ РјР°СЃСЃРёРІР°:\n");
 	raz(&razmer);
 	array = malloc(sizeof(int) * razmer);
-	printf("Если вы хотите продолжить ввод с клавиатуры введите '0'\nЕсли вы хотите случайно сгенерировать числа введите '1'\n");
+	printf("Р•СЃР»Рё РІС‹ С…РѕС‚РёС‚Рµ РїСЂРѕРґРѕР»Р¶РёС‚СЊ РІРІРѕРґ СЃ РєР»Р°РІРёР°С‚СѓСЂС‹ РІРІРµРґРёС‚Рµ '0'\nР•СЃР»Рё РІС‹ С…РѕС‚РёС‚Рµ СЃР»СѓС‡Р°Р№РЅРѕ СЃРіРµРЅРµСЂРёСЂРѕРІР°С‚СЊ С‡РёСЃР»Р° РІРІРµРґРёС‚Рµ '1'\n");
 	rands = random();
 	if (rands == 0)
 	{
@@ -62,7 +63,7 @@ void T1()
 	else if (rands == 1)
 	{
 		rand_elem(array, razmer);
-		printf("Ваш массив: ");
+		printf("Р’Р°С€ РјР°СЃСЃРёРІ: ");
 		printArray(razmer, array);
 	}
 	while (elem < razmer)
@@ -76,7 +77,7 @@ void T1()
 		else
 			elem++;
 	}
-	printf("\nПолученный массив:\n");
+	printf("\nРџРѕР»СѓС‡РµРЅРЅС‹Р№ РјР°СЃСЃРёРІ:\n");
 	printArray(razmer, array);
 	free(array);
 }
@@ -87,12 +88,12 @@ void T2()
 	int low = 0, row, razmer, stop;
 	int** array = NULL;
 	setlocale(LC_ALL, "");
-	printf("Введите количество строк массива:");
+	printf("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂРѕРє РјР°СЃСЃРёРІР°:");
 	raz(&row);
 	array = init_matrix(row);
 	for (int i = 0; i < row; i++)
 	{
-		printf("Введите элементы %d-ой строки\n", i);
+		printf("Р’РІРµРґРёС‚Рµ СЌР»РµРјРµРЅС‚С‹ %d-РѕР№ СЃС‚СЂРѕРєРё\n", i);
 		array[i] = write_num(0, &razmer);
 		if (i % 2 != 0)
 		{
@@ -100,7 +101,7 @@ void T2()
 			array[i] = rem_element_matrix(array[i], low, razmer);
 		}
 	}
-	printf("Результат:\n");
+	printf("Р РµР·СѓР»СЊС‚Р°С‚:\n");
 	print_low(row, array);
 	free(array);
 }
@@ -111,14 +112,14 @@ void T3()
 	int pos;
 	int razmer = 0;
 	int** array = NULL;
-	printf("Введите размер квадратной матрицы:");
+	printf("Р’РІРµРґРёС‚Рµ СЂР°Р·РјРµСЂ РєРІР°РґСЂР°С‚РЅРѕР№ РјР°С‚СЂРёС†С‹:");
 	raz(&razmer);
 	int row = razmer, col = razmer;
 	array = init_matrix_2x2(razmer);
 	paste_2x2(array, razmer, 200);
-	printf("\nВаша матрица:");
+	printf("\nР’Р°С€Р° РјР°С‚СЂРёС†Р°:");
 	print_matrix(razmer, razmer, array);
-	printf("\nВведите сторону, в которую хотите сдвинуть массив\n1 - влево;\n2 - вправо;\n3 - вверх;\n4 - вниз\n");
+	printf("\nР’РІРµРґРёС‚Рµ СЃС‚РѕСЂРѕРЅСѓ, РІ РєРѕС‚РѕСЂСѓСЋ С…РѕС‚РёС‚Рµ СЃРґРІРёРЅСѓС‚СЊ РјР°СЃСЃРёРІ\n1 - РІР»РµРІРѕ;\n2 - РІРїСЂР°РІРѕ;\n3 - РІРІРµСЂС…;\n4 - РІРЅРёР·\n");
 	write_side(&pos);
 	switch (pos)
 	{
@@ -135,7 +136,7 @@ void T3()
 		array = down(array, row);
 		break;
 	}
-	printf("Результат:\n");
+	printf("Р РµР·СѓР»СЊС‚Р°С‚:\n");
 	print_matrix(row, col, array);
 	free(array);
 }
