@@ -16,7 +16,7 @@ int** right(int** arr, int razmer);
 int** left(int** arr, int razmer);
 int random();
 void rand_elem(int* arr, int razmer);
-void rand_gen_raz(razmer);
+void rand_gen_raz(int* razmer);
 int** search_low(int** arr, int razmer, int low, int num);
 void write_side(int* pos);
 void elem_write(int element, int razmer, int* arr);
