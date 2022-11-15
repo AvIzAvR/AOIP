@@ -191,10 +191,10 @@ void rand_elem(int* arr, int razmer)
 	}
 }
 
-void rand_gen_raz(razmer)
+void rand_gen_raz(int *razmer)
 {
-	razmer = rand() % (200 + 100);
-	printf("Размерность вашего массива: %d\n", razmer);
+	*razmer = rand() % (200 + 100);
+	printf("Размерность вашего массива: %d\n", *razmer);
 }
 
 int** search_low(int** arr, int razmer, int low, int num)
