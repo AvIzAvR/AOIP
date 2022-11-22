@@ -10,7 +10,6 @@
 
 void T1();
 void T2();
-void T3();
 
 int main()
 {
@@ -19,10 +18,10 @@ int main()
 		srand(time(NULL));
 		int T;
 		setlocale(LC_ALL, "");
-		printf("Введите номер задания:\n");
+		printf("Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ Р·Р°РґР°РЅРёСЏ:\n");
 		while (!scanf_s("%d", &T))
 		{
-			printf("Неверный тип данных\n");
+			printf("РќРµРІРµСЂРЅС‹Р№ С‚РёРї РґР°РЅРЅС‹С…\n");
 			rewind(stdin);
 		}
 		switch (T)
@@ -37,11 +36,6 @@ int main()
 			T2();
 			break;
 		}
-		//case 3:
-		//{
-		//	T3();
-		//	break;
-		//}
 		}
 		printf("\n");
 	}
@@ -52,72 +46,72 @@ int main()
 
 
 
-//1.	В одномерном массиве выполнить сортировку нечетных элементов между первым и последним минимальными элементами методом вставок
+//1.	Р’ РѕРґРЅРѕРјРµСЂРЅРѕРј РјР°СЃСЃРёРІРµ РІС‹РїРѕР»РЅРёС‚СЊ СЃРѕСЂС‚РёСЂРѕРІРєСѓ РЅРµС‡РµС‚РЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ РјРµР¶РґСѓ РїРµСЂРІС‹Рј Рё РїРѕСЃР»РµРґРЅРёРј РјРёРЅРёРјР°Р»СЊРЅС‹РјРё СЌР»РµРјРµРЅС‚Р°РјРё РјРµС‚РѕРґРѕРј РІСЃС‚Р°РІРѕРє
 
 void T1()
 {
 	setlocale(LC_ALL, "");
 	int razmer = 0, elem = 0, rands = -1, low = 0, min_f = 0, min_l = 0;;
-	printf("Введите размерность массива:\n");
+	printf("Р’РІРµРґРёС‚Рµ СЂР°Р·РјРµСЂРЅРѕСЃС‚СЊ РјР°СЃСЃРёРІР°:\n");
 	raz(&razmer);
 	int* array = NULL;
 	array = (int*)malloc(sizeof(int) * razmer);
-	printf("Если вы хотите продолжить ввод с клавиатуры введите '0'\nЕсли вы хотите случайно сгенерировать числа введите '1'\n");
+	printf("Р•СЃР»Рё РІС‹ С…РѕС‚РёС‚Рµ РїСЂРѕРґРѕР»Р¶РёС‚СЊ РІРІРѕРґ СЃ РєР»Р°РІРёР°С‚СѓСЂС‹ РІРІРµРґРёС‚Рµ '0'\nР•СЃР»Рё РІС‹ С…РѕС‚РёС‚Рµ СЃР»СѓС‡Р°Р№РЅРѕ СЃРіРµРЅРµСЂРёСЂРѕРІР°С‚СЊ С‡РёСЃР»Р° РІРІРµРґРёС‚Рµ '1'\n");
 	rands = random();
 	if (rands == 0)
 	{
 		elem_write(elem, razmer, array);
-		printf("Ваш массив: ");
+		printf("Р’Р°С€ РјР°СЃСЃРёРІ: ");
 		printArray(razmer, array);
 	}
 	else if (rands == 1)
 	{
 		rand_elem(array, razmer);
-		printf("Ваш массив: ");
+		printf("Р’Р°С€ РјР°СЃСЃРёРІ: ");
 		printArray(razmer, array);
 	}
 	min_f = search_low_first(array, razmer);
 	min_l = search_low_last(array, razmer, min_f);
-	printf("\nПервое: %d; Последнее: %d\n", min_f, min_l);
+	printf("\nРџРµСЂРІРѕРµ: %d; РџРѕСЃР»РµРґРЅРµРµ: %d\n", min_f, min_l);
 	if ((min_f / min_l) == 1)
 	{
-		printf("\nОбнаружен только 1 минимальный элемент.");
+		printf("\nРћР±РЅР°СЂСѓР¶РµРЅ С‚РѕР»СЊРєРѕ 1 РјРёРЅРёРјР°Р»СЊРЅС‹Р№ СЌР»РµРјРµРЅС‚.");
 	}
 	else
 	{
 		insertionSort(array, min_f, min_l);
-		printf("Результат cортировки вставками: ");
+		printf("Р РµР·СѓР»СЊС‚Р°С‚ cРѕСЂС‚РёСЂРѕРІРєРё РІСЃС‚Р°РІРєР°РјРё: ");
 		printArray(razmer, array);
 		bubble(array, min_f, min_l);
-		printf("\nРезультат cортировки пузырьком: ");
+		printf("\nР РµР·СѓР»СЊС‚Р°С‚ cРѕСЂС‚РёСЂРѕРІРєРё РїСѓР·С‹СЂСЊРєРѕРј: ");
 		printArray(razmer, array);
 	}
 	free(array);
 }
 
 
-//2.	В матрице размером NxM выполнить сортировку столбцов по убыванию суммы элементов методом Хоара
+//2.	Р’ РјР°С‚СЂРёС†Рµ СЂР°Р·РјРµСЂРѕРј NxM РІС‹РїРѕР»РЅРёС‚СЊ СЃРѕСЂС‚РёСЂРѕРІРєСѓ СЃС‚РѕР»Р±С†РѕРІ РїРѕ СѓР±С‹РІР°РЅРёСЋ СЃСѓРјРјС‹ СЌР»РµРјРµРЅС‚РѕРІ РјРµС‚РѕРґРѕРј РҐРѕР°СЂР°
 
 void T2()
 {
 	setlocale(LC_ALL, "");
 	int row, col = 0;
 	int** array = NULL;
-	printf("Введите количество строк массива:\n");
+	printf("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂРѕРє РјР°СЃСЃРёРІР°:\n");
 	raz(&row);
-	printf("Введите количество столбцов массива:\n");
+	printf("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚РѕР»Р±С†РѕРІ РјР°СЃСЃРёРІР°:\n");
 	raz(&col);
 	array = init_matrix_NxM(col, row);
 	paste_NxM(array, row, col, 250);
-	printf("\nВаша матрица:\n");
+	printf("\nР’Р°С€Р° РјР°С‚СЂРёС†Р°:\n");
 	print_matrix(row, col, array);
 	int* sum_results = NULL;
 	sum_results = (int*)malloc(sizeof(int) * col);
-	printf("Сумма рез:\n");
+	printf("РЎСѓРјРјР° СЂРµР·:\n");
 	sumResult(col, row, sum_results, array);
 	printArray(col, sum_results);
 	printf("\n");
 	quickSortMatrix(array, row, col);
-	printf("Результат:\n");
+	printf("Р РµР·СѓР»СЊС‚Р°С‚:\n");
 	print_matrix(row, col, array);
 }
