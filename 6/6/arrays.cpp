@@ -11,7 +11,7 @@ void raz(int* x)
 	while (!scanf_s("%d", x) || getchar() != '\n' || *x <= 0)
 	{
 		rewind(stdin);
-		printf("Íåâåðíûé òèï äàííûõ\n");
+		printf("ÐÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ñ‚Ð¸Ð¿ Ð´Ð°Ð½Ð½Ñ‹Ñ…\n");
 	}
 }
 
@@ -82,7 +82,7 @@ int random()
 	int x;
 	while (!scanf_s("%d", &x) || x != 0 && x != 1)
 	{
-		printf("Íåâåðíûé òèï äàííûõ\n");
+		printf("ÐÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ñ‚Ð¸Ð¿ Ð´Ð°Ð½Ð½Ñ‹Ñ…\n");
 		rewind(stdin);
 	}
 	return x;
@@ -100,7 +100,7 @@ void rand_elem(int* arr, int razmer)
 void rand_gen_raz(int* razmer)
 {
 	*razmer = rand() % (200 + 100);
-	printf("Ðàçìåðíîñòü âàøåãî ìàññèâà: %d\n", *razmer);
+	printf("Ð Ð°Ð·Ð¼ÐµÑ€Ð½Ð¾ÑÑ‚ÑŒ Ð²Ð°ÑˆÐµÐ³Ð¾ Ð¼Ð°ÑÑÐ¸Ð²Ð°: %d\n", *razmer);
 }
 
 int search_low_first(int* arr, int razmer)
@@ -138,7 +138,7 @@ void write_side(int* pos)
 	while (!scanf_s("%d", pos) || *pos != 1 && *pos != 2 && *pos != 3 && *pos != 4)
 	{
 		rewind(stdin);
-		printf("Íåâåðíî ââåä¸ííûé òèï äàííûõ!");
+		printf("ÐÐµÐ²ÐµÑ€Ð½Ð¾ Ð²Ð²ÐµÐ´Ñ‘Ð½Ð½Ñ‹Ð¹ Ñ‚Ð¸Ð¿ Ð´Ð°Ð½Ð½Ñ‹Ñ…!");
 	}
 }
 
@@ -146,11 +146,11 @@ void elem_write(int element, int razmer, int* arr)
 {
 	for (int i = 0; i < razmer; i++)
 	{
-		printf("Ââåäèòå %d-ûé ýëåìåíò ìàññèâà\n", i);
+		printf("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ %d-Ñ‹Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ Ð¼Ð°ÑÑÐ¸Ð²Ð°\n", i);
 		while (!scanf_s("%d", &arr[i]) || getchar() != '\n')
 		{
 			rewind(stdin);
-			printf("Íåâåðíûé òèï äàííûõ\n");
+			printf("ÐÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ñ‚Ð¸Ð¿ Ð´Ð°Ð½Ð½Ñ‹Ñ…\n");
 		}
 	}
 }
@@ -183,7 +183,7 @@ void insertionSort(int* arr, int min_f, int min_l)
 	}
 	clock_t end_time = clock();
 	float insetionTime = end_time - start_time;
-	printf("\nÇàòðà÷åííîå âðåìÿ(Âñòàâêà): %.10f ñåê.\n", insetionTime);
+	printf("\nÐ—Ð°Ñ‚Ñ€Ð°Ñ‡ÐµÐ½Ð½Ð¾Ðµ Ð²Ñ€ÐµÐ¼Ñ(Ð’ÑÑ‚Ð°Ð²ÐºÐ°): %.10f ÑÐµÐº.\n", insetionTime);
 }
 
 void bubble(int* arr, int min_f, int min_l)
@@ -209,7 +209,7 @@ void bubble(int* arr, int min_f, int min_l)
 	}
 	clock_t end_time1 = clock();
 	float bubbleTime = end_time1 - start_time1;
-	printf("\nÇàòðà÷åííîå âðåìÿ(Ïóçûð¸ê): %.10f ñåê.\n", bubbleTime);
+	printf("\nÐ—Ð°Ñ‚Ñ€Ð°Ñ‡ÐµÐ½Ð½Ð¾Ðµ Ð²Ñ€ÐµÐ¼Ñ(ÐŸÑƒÐ·Ñ‹Ñ€Ñ‘Ðº): %.10f ÑÐµÐº.\n", bubbleTime);
 }
 
 int* sumResult(int col, int row, int* sum_results, int** array)
