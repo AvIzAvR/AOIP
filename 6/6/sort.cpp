@@ -107,7 +107,7 @@ void T2()
 	print_matrix(row, col, array);
 	int* sum_results = NULL;
 	sum_results = (int*)malloc(sizeof(int) * col);
-	printf("Сумма рез:\n");
+	printf("Сумма cтолбцов:\n");
 	sumResult(col, row, sum_results, array);
 	printArray(col, sum_results);
 	printf("\n");
