@@ -27,7 +27,7 @@ int main(int argc, char** argv)
 
 void Task1(int argc, char** argv)
 {
-	printf("Введите строку, в которой хотите преобразовать все первые буквы каждого слова в строчные:\n");
+	printf("Р’РІРµРґРёС‚Рµ СЃС‚СЂРѕРєСѓ, РІ РєРѕС‚РѕСЂРѕР№ С…РѕС‚РёС‚Рµ РїСЂРµРѕР±СЂР°Р·РѕРІР°С‚СЊ РІСЃРµ РїРµСЂРІС‹Рµ Р±СѓРєРІС‹ РєР°Р¶РґРѕРіРѕ СЃР»РѕРІР° РІ СЃС‚СЂРѕС‡РЅС‹Рµ:\n");
 	char* string = getstringWithFirstUp();
 	printf("%s", string);
 }
@@ -36,23 +36,23 @@ void Task1(int argc, char** argv)
 void Task2(int argc, char** argv)
 {
 	int N1 = 0, N2 = 0;
-	printf("Введите N1:\n"); 
+	printf("Р’РІРµРґРёС‚Рµ N1:\n"); 
 	raz(&N1);
-	printf("Введите N2:\n");
+	printf("Р’РІРµРґРёС‚Рµ N2:\n");
 	raz(&N2);
-	printf("Введите первую строку:\n");
+	printf("Р’РІРµРґРёС‚Рµ РїРµСЂРІСѓСЋ СЃС‚СЂРѕРєСѓ:\n");
 	char* string = getstring();
-	printf("Введите вторую строку:\n");
+	printf("Р’РІРµРґРёС‚Рµ РІС‚РѕСЂСѓСЋ СЃС‚СЂРѕРєСѓ:\n");
 	char* string1 = getstring();
 	char* string3 = newString(N1, N2, string, string1);
-	printf("Результат:");
+	printf("Р РµР·СѓР»СЊС‚Р°С‚:");
 	printf("%s", string3);
 }
 
 void Task3(int argc, char** argv)
 {
 	if (argc == 1) {
-		printf_s("\nНеверное кол-во аргов\n");
+		printf_s("\nРќРµРІРµСЂРЅРѕРµ РєРѕР»-РІРѕ Р°СЂРіРѕРІ\n");
 		return;
 	}
 	char** strings = (char**)calloc(argc - 1, sizeof(char*));
