@@ -11,7 +11,7 @@ void raz(int *x)
 	while (!scanf_s("%d", x) || getchar() != '\n' || *x <= 0)
 	{
 		rewind(stdin);
-		printf("Íåâåðíûé òèï äàííûõ!\n");
+		printf("ÐÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ñ‚Ð¸Ð¿ Ð´Ð°Ð½Ð½Ñ‹Ñ…!\n");
 	}
 }
 
@@ -19,7 +19,7 @@ void razfortask(int *task)
 {
 	printf("\n");
 	while (!scanf_s("%d", task) || *task > 3 || *task < 1 || getchar() != '\n') {
-		printf_s("Íåâåðíûé òèï äàííûõ!\n");
+		printf_s("ÐÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ñ‚Ð¸Ð¿ Ð´Ð°Ð½Ð½Ñ‹Ñ…!\n");
 		rewind(stdin);
 	}
 }
@@ -28,7 +28,7 @@ void razfortask(int *task)
 void menu()
 {
 	printf("-----------------------------------------");
-	printf("\n|\tÄëÿ âûáîðà çàäàíèÿ ââåäèòå:\t|\n|\t\t\t\t\t|\n|\t1 - ïåðâîå çàäàíèå\t\t|\n|\t\t\t\t\t|\n|\t2 - âòîðîå çàäàíèå\t\t|\n|\t\t\t\t\t|\n|\t3 - âòîðîå çàäàíèå\t\t|\n|\t\t\t\t\t|\n");
+	printf("\n|\tÐ”Ð»Ñ Ð²Ñ‹Ð±Ð¾Ñ€Ð° Ð·Ð°Ð´Ð°Ð½Ð¸Ñ Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ:\t|\n|\t\t\t\t\t|\n|\t1 - Ð¿ÐµÑ€Ð²Ð¾Ðµ Ð·Ð°Ð´Ð°Ð½Ð¸Ðµ\t\t|\n|\t\t\t\t\t|\n|\t2 - Ð²Ñ‚Ð¾Ñ€Ð¾Ðµ Ð·Ð°Ð´Ð°Ð½Ð¸Ðµ\t\t|\n|\t\t\t\t\t|\n|\t3 - Ð²Ñ‚Ð¾Ñ€Ð¾Ðµ Ð·Ð°Ð´Ð°Ð½Ð¸Ðµ\t\t|\n|\t\t\t\t\t|\n");
 	printf("-----------------------------------------");
 }
 
@@ -39,7 +39,7 @@ char* newString(int N1, int N2, char* string, char* string1)
 	int size = whensize(string1);
 	int size1 = whensize(string);
 	if (size < N1 || size1 < N2)
-		printf("Íåâåðíûé òèï äàííûõ!");
+		printf("ÐÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ñ‚Ð¸Ð¿ Ð´Ð°Ð½Ð½Ñ‹Ñ…!");
 	else
 	{
 		for (int i = 0; i < N1; i++)
